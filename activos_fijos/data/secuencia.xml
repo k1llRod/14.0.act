@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="seq_account_asset" model="ir.sequence">
+            <field name="name">Codificacion activo fijo</field>
+            <field name="code">account.asset</field>
+            <field name="prefix"></field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

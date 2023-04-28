@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="activate_work_form">
+        <field name="name">wizard.activate.work.form</field>
+        <field name="model">activate.work</field>
+        <field name="arch" type="xml">
+            <form string="Activar obra">
+                <group>
+                    <group string="Valores de activo base">
+                        <field name="action" placeholder="Asignar nombre al activo"/>
+                        <field name="asset_id"/>
+                        <field name="asset_model"/>
+<!--                        <field name="id_model" invisible="0"/>-->
+                    </group>
+                    <group string="Valores de activacion">
+                        <field name="name"/>
+                        <field name="activation_date" />
+                        <field name="reference_value" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="activate" string="Activar" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

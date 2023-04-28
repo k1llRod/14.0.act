@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_account_asset_xlx"
+        string="Reporte de activos fijos"
+        model="account.asset"
+        report_type="xlsx"
+        name="account_asset.report_account_asset_xls"
+        file="account_asset.report_account_asset_xls"/>
+</odoo>

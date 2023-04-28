@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="1" model="activos_fijos.grupocontable">
+            <field name="id_grupo">01</field>
+            <field name="name">Equipos de computación</field>
+            <field name="vida_util">48</field>
+            <field name="coeficiente">10</field>
+        </record>
+        <record id="2" model="activos_fijos.grupocontable">
+            <field name="id_grupo">02</field>
+            <field name="name">Muebles y enseres</field>
+            <field name="vida_util">48</field>
+            <field name="coeficiente">10</field>
+        </record>
+        <record id="3" model="activos_fijos.grupocontable">
+            <field name="id_grupo">03</field>
+            <field name="name">Herramientas</field>
+            <field name="vida_util">12</field>
+            <field name="coeficiente">10</field>
+        </record>
+
+    </data>
+</odoo>

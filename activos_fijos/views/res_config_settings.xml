@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_inherited" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherited</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='accrued_invoice']" position="after">
+                         <div name="account_asset" class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Activos fijos</span>
+                                <div class="text-muted">
+                                    Definir el porcentaje mínimo, para mejora de activo fijo.
+                                </div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="limit"
+                                               class="col-md-3 o_light_label"/>
+                                        <field name="limit"
+                                               attrs="{'required': [('enable_discount','==',True)]}"/>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ufv" model="res.currency">
+            <field name="name">UFV</field>
+            <field name="symbol">UFV</field>
+            <field name="rounding">0.01</field>
+            <field name="currency_unit_label">UFV</field>
+            <field name="currency_subunit_label">Cents</field>
+        </record>
+    </data>
+</odoo>

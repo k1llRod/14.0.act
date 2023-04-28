@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <!-- Vista Árbol de Modelo Log de Factura -->
+
+        <record model="ir.ui.view" id="account_asset_log_tree">
+            <field name="name">account.asset.log.tree</field>
+            <field name="model">account.asset.log</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0">
+                    <field name="asset_id" invisible="1"/>
+                    <field name="asset_relation_id"/>
+                    <field name="account"/>
+                    <field name="date"/>
+                    <field name="asset_description"/>
+                    <field name="mount"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

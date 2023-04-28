@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="asset_modify_form" model="ir.ui.view">
+            <field name="name">wizard.asset.modify.form</field>
+            <field name="model">asset.modify</field>
+            <field name="inherit_id" ref="account_asset.asset_modify_form"/>
+            <field name="arch" type="xml">
+                <field name="account_depreciation_expense_id" position="after">
+                    <field name="account_inflation_tenure_id"/>
+                </field>
+<!--                Rodrigo-->
+<!--                Ocultar campo valor depreciable cuando sea obra en curso -->
+                <xpath expr="//field[@name='value_residual']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('work_in_progress','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='value_residual']" position="after">
+                    <field name="additional_amount" />
+                </xpath>
+                <!--
+                <field name="value_residual" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field> -->
+                <field name="salvage_value" position="after">
+                    <field name="minium_limit" attrs="{'invisible': [('work_in_progress','=',True)]}"/>
+                    <field name="minium_value" attrs="{'invisible': [('work_in_progress','=',True)]}"/>
+                    <field name="no_depreciation_flag" attrs="{'readonly': True}"/>
+                    <field name="work_in_progress" invisible="0" readonly="True"/>
+                </field>
+                <xpath expr="//field[@name='account_depreciation_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('no_depreciation_flag','!=',True),('gain_value','!=',False)]}</attribute>
+                    <attribute name="attrs">{'invisible': [('no_depreciation_flag','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='account_depreciation_expense_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('no_depreciation_flag','!=',True),('gain_value','!=',False)]}</attribute>
+                    <attribute name="attrs">{'invisible': [('no_depreciation_flag','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='method_number']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('no_depreciation_flag','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='method_period']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('no_depreciation_flag','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='salvage_value']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('no_depreciation_flag','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="group/group[2]/label" position="attributes">
+                    <attribute name="attrs">{'invisible': [('no_depreciation_flag','=',True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

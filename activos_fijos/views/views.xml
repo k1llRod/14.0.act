@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="activos_fijos.list">
+      <field name="name">activos_fijos list</field>
+      <field name="model">activos_fijos.activos_fijos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="activos_fijos.action_window">
+      <field name="name">activos_fijos window</field>
+      <field name="res_model">activos_fijos.activos_fijos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="activos_fijos.action_server">
+      <field name="name">activos_fijos server</field>
+      <field name="model_id" ref="model_activos_fijos_activos_fijos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="activos_fijos" id="activos_fijos.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="activos_fijos.menu_1" parent="activos_fijos.menu_root"/>
+    <menuitem name="Menu 2" id="activos_fijos.menu_2" parent="activos_fijos.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="activos_fijos.menu_1_list" parent="activos_fijos.menu_1"
+              action="activos_fijos.action_window"/>
+    <menuitem name="Server to list" id="activos_fijos" parent="activos_fijos.menu_2"
+              action="activos_fijos.action_server"/>
+-->
+
+
+
+    <!-- VISTAS GRUPO CONTABLE -->
+
+    <record model="ir.ui.view" id="activos_fijos.grupocontable_list_view">
+      <field name="name">activos_fijos.grupocontable.view.tree</field>
+      <field name="model">activos_fijos.grupocontable</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_grupo"/>
+          <field name="name"/>
+          <field name="vida_util"/>
+          <field name="coeficiente"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="activos_fijos.grupocontable_form_view">
+      <field name="name">activos_fijos.grupocontable.view.form</field>
+      <field name="model">activos_fijos.grupocontable</field>
+      <field name="arch" type="xml">
+        <form string="Formulario de grupos contables">
+          <sheet>
+
+         <div class="oe_title">
+              <label class="oe_edit_only" for="id_grupo" string="Subfijo"/>
+              <h1><field name="id_grupo" placeholder="Subfijo del grupo contable"/></h1>
+
+          </div>
+
+        <group>
+          <group>
+            <separator string="Informacion general" />
+              <field name="name" placeholder="Descripcion del grupo contable"/>
+          </group>
+
+        </group>
+            <group>
+                <field name="vida_util"/>
+            </group>
+            <group>
+                <field name="coeficiente"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- VISTAS UFV -->
+
+    <record model="ir.ui.view" id="activos_fijos.ufv_list_view">
+      <field name="name">activos_fijos.ufv.view.tree</field>
+      <field name="model">activos_fijos.ufv</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha_registro"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <!-- FORMULARIOS NUEVO UFV -->
+    <record model="ir.ui.view" id="activos_fijos.ufv_form_view">
+      <field name="name">activos_fijos.ufv.view.form</field>
+      <field name="model">activos_fijos.ufv</field>
+      <field name="arch" type="xml">
+        <form string="Formulario de registros UFV">
+          <sheet>
+
+         <div class="oe_title">
+              <label class="oe_edit_only" for="name" string="Valor UFV"/>
+              <h1><field name="name" placeholder="Valor"/></h1>
+
+          </div>
+
+        <group>
+          <group>
+            <separator string="Informacion general" />
+              <field name="fecha_registro" placeholder="Fecha de registro de la UFV"/>
+          </group>
+
+        </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- VISTAS ACTIVOS FIJOS -->
+<!--
+    <record model="ir.ui.view" id="activos_fijos.activofijo_list_view">
+      <field name="name">activos_fijos.activofijo.view.tree</field>
+      <field name="model">activos_fijos.activofijo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo_activo"/>
+          <field name="grupo_contable_id"/>
+          <field name="descripcion" />
+          <field name="currency_rate" />
+          <field name="costo_adquisicion" />
+          <field name="credito_fiscal" />
+
+        </tree>
+      </field>
+    </record> -->
+
+    <!-- ACTIVO FIJO -->
+
+    <!--
+    <record model="ir.ui.view" id="activos_fijos.activofijo_form_view">
+      <field name="name">activos_fijos.activofijo.view.form</field>
+      <field name="model">activos_fijos.activofijo</field>
+      <field name="arch" type="xml">
+        <form string="Informacion del activo fijo">
+          <sheet>
+
+         <separator string="Informacion del activo fijo"/>
+
+          <group>
+            <group>
+              <field name="codigo_activo"/>
+              <field name="grupo_contable_id"/>
+              <field name="descripcion"/>
+              <field name="costo_adquisicion"/>
+              <field name="credito_fiscal"/>
+
+            </group>
+            <group>
+                <field name="currency_id"/>
+               <field name="ufv_ids"/>
+              <field name="currency_rate"/>
+              <field name="valor" />
+
+            </group>
+
+
+          </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+    -->
+
+    <!-- DEFINICION DE MENUS -->
+    <record model="ir.actions.act_window" id="activos_fijos.activofijo_action_window">
+      <field name="name">Grupos contables</field>
+      <field name="res_model">activos_fijos.activofijo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="activos_fijos.grupocontable_action_window">
+      <field name="name">Grupos contables</field>
+      <field name="res_model">activos_fijos.grupocontable</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="activos_fijos.ufv_action_window">
+      <field name="name">UFV</field>
+      <field name="res_model">activos_fijos.ufv</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Activos fijoss" id="activos_fijos.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Activos fijos" id="activos_fijos.activofijo_menu" parent="activos_fijos.menu_root" action="activos_fijos.activofijo_action_window"/>
+    <menuitem name="Grupos contables" id="activos_fijos.grupocontable_menu" parent="activos_fijos.menu_root"  action="activos_fijos.grupocontable_action_window" />
+    <menuitem name="UFV" id="activos_fijos.ufv_menu" parent="activos_fijos.menu_root" action="activos_fijos.ufv_action_window"/>
+
+
+
+
+
+
+  </data>
+</odoo>

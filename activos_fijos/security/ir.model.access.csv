@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_activos_fijos_activate_work,access_activos_fijos_activate_work,model_activate_work,base.group_user,1,1,1,1
+access_activos_fijos_account_asset_log,access_activos_fijos_account_asset_log,model_account_asset_log,base.group_user,1,1,1,1
